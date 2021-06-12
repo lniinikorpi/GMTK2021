@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [Header("Stats")]
     public int maxHealth = 3;
     public int movementSpeed = 5;
+    public float dmgBoostTime = .5f;
     // Start is called before the first frame update
     void Start()
     {
