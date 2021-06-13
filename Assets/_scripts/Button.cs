@@ -6,10 +6,14 @@ public class Button : MonoBehaviour
 {
     public Color color;
     public List<GameObject> affectedDoors = new List<GameObject>();
+    bool isOpen = false;
+
+    private AudioSource audioSource;
 
     private void Start()
     {
         GetComponentInChildren<SpriteRenderer>().color = color;
+        audioSource = GetComponent<AudioSource>();
         foreach (GameObject obj in affectedDoors)
         {
             foreach (SpriteRenderer renderer in obj.GetComponentsInChildren<SpriteRenderer>())
@@ -23,11 +27,16 @@ public class Button : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            foreach (GameObject obj in affectedDoors)
+            if (!isOpen)
             {
-                obj.SetActive(false);
+                isOpen = true;
+                foreach (GameObject obj in affectedDoors)
+                {
+                    obj.SetActive(false);
+                }
+                GetComponentInChildren<SpriteRenderer>().color = Color.green;
+                audioSource.Play(); 
             }
-            GetComponentInChildren<SpriteRenderer>().color = Color.green;
         }
     }
 }

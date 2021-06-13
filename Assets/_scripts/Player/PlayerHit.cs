@@ -20,12 +20,18 @@ public class PlayerHit : MonoBehaviour, IDamageable
         if(Time.time >= _canTakeDamage)
         {
             _damageable = true;
+            GetComponentInChildren<SpriteRenderer>(true).sprite = _player.normalSprite;
         }
     }
 
     public void Die()
     {
-        GetComponentInChildren<SpriteRenderer>().sprite = _player.dieSprite;
+        _player.PlayAudio(_player.deathClip);
+        GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+        Instantiate(_player.dieParticle, transform.position, Quaternion.identity);
+        GetComponent<BoxCollider2D>().enabled = false;
+        _player.isAlive = false;
+        StartCoroutine(_player.RestartLevel());
     }
 
     public void TakeDamage(int value)
@@ -36,7 +42,9 @@ public class PlayerHit : MonoBehaviour, IDamageable
             return;
 
             _canTakeDamage = Time.time + _player.dmgBoostTime;
-            _damageable = false; 
+            _damageable = false;
+            _player.PlayAudio(_player.hitClip);
+            GetComponentInChildren<SpriteRenderer>().sprite = _player.dieSprite;
         }
 
         _currentHealth -= value;
