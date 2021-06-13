@@ -25,11 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!_player.isAlive)
+        {
+            _movement = Vector2.zero;
+        }
         MovePlayer();
     }
 
     public void OnMove(InputValue value)
     {
+        if(!_player.isAlive)
+        {
+            return;
+        }
         _movement = value.Get<Vector2>();
     }
     void MovePlayer()
