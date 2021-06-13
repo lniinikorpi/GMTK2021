@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    [HideInInspector]
-    public int currentLevel = 0;
+    public int currentLevelIndex = 0;
     public bool isPaused = false;
     public List<GameObject> levels = new List<GameObject>();
     public GameObject currentLevelObject;
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
         isPaused = false;
         Time.timeScale = 1;
-        LoadLevel(currentLevel);
+        LoadLevel(currentLevelIndex);
     }
 
     public void LoadLevel(int value)
@@ -43,7 +42,6 @@ public class GameManager : MonoBehaviour
         }
         GameObject newLevel = Instantiate(levels[value], Vector2.zero, Quaternion.identity);
         currentLevelObject = newLevel;
-        GameObject.Find("Player").transform.position = Vector2.zero;
     }
 
     public void PauseGame()

@@ -8,13 +8,7 @@ public class Goal : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            ToNextLevel();
+            other.GetComponent<Player>().CompleteLevel();
         }
-    }
-
-    void ToNextLevel()
-    {
-        GameManager.instance.currentLevel++;
-        GameManager.instance.LoadLevel(GameManager.instance.currentLevel);
     }
 }

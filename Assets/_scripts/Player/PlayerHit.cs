@@ -34,6 +34,12 @@ public class PlayerHit : MonoBehaviour, IDamageable
         StartCoroutine(_player.RestartLevel());
     }
 
+    public void ToMaxHealth()
+    {
+        _currentHealth = _player.maxHealth;
+        UIManager.instance.UpdateHealthBar(_currentHealth);
+    }
+
     public void TakeDamage(int value)
     {
         if (value > 0)

@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject muteButton;
     public GameObject unMuteButton;
+    public GameObject endPanel;
 
     #region singelton
     private void Awake()
@@ -41,6 +42,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateHealthBar(3);
         pausePanel.SetActive(false);
+        endPanel.SetActive(false);
     }
 
     public void UpdateHealthBar(int currentHealth)
@@ -71,5 +73,10 @@ public class UIManager : MonoBehaviour
         unMuteButton.SetActive(false);
         muteButton.SetActive(true);
         AudioManager.instance.UnMute();
+    }
+
+    public void WinGame()
+    {
+        endPanel.SetActive(true);
     }
 }
