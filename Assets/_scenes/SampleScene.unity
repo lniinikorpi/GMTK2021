@@ -235,14 +235,14 @@ MonoBehaviour:
   currentLevel: 1
   isPaused: 0
   levels:
-  - {fileID: 6159979595555948595, guid: 2d23c5e4baee6b748840f95aa91ad8df, type: 3}
-  - {fileID: 3237022759861455615, guid: 87df82b68660a4a4986b8f1246035f7e, type: 3}
-  - {fileID: 9018952440672995007, guid: d7763aeb747d7da4684c7f41e4166cae, type: 3}
-  - {fileID: 6806971169310991441, guid: c5b2cc8f533cc3c448cf10d0e1c15273, type: 3}
-  - {fileID: 8975247826893053078, guid: 18e7c309afedf0b4da526500031b5593, type: 3}
-  - {fileID: 5132901197105597566, guid: 8e71377d542edf249ae9b6f5e6db806f, type: 3}
-  - {fileID: 4960189819104539365, guid: f52b88963e3e9fd4b96b8a59ad1533a4, type: 3}
-  currentLevelObject: {fileID: 1391754378}
+  - {fileID: 1119211444247057697, guid: 87df82b68660a4a4986b8f1246035f7e, type: 3}
+  - {fileID: 2253272404382502533, guid: d7763aeb747d7da4684c7f41e4166cae, type: 3}
+  - {fileID: 1188940500392597282, guid: 16b9df6dc23899d4d81454d79f10c343, type: 3}
+  - {fileID: 8648025850459932250, guid: 18e7c309afedf0b4da526500031b5593, type: 3}
+  - {fileID: 8534785060878317202, guid: 8e71377d542edf249ae9b6f5e6db806f, type: 3}
+  - {fileID: 4884130046385600271, guid: f52b88963e3e9fd4b96b8a59ad1533a4, type: 3}
+  - {fileID: 8793558641386131601, guid: 7a9d4f9fd0de518479cc430d09ed9fbd, type: 3}
+  currentLevelObject: {fileID: 0}
 --- !u!4 &66731763
 Transform:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.51
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2880,7 +2880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1391754379
 Transform:
   m_ObjectHideFlags: 0

@@ -226,8 +226,6 @@ MonoBehaviour:
   _patrolTargets:
   - {fileID: 4884199790146609437}
   - {fileID: 4884199788571270446}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!198 &4884199789069297503
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5146,8 +5144,6 @@ MonoBehaviour:
   _patrolTargets:
   - {fileID: 7601262259526297096}
   - {fileID: 7601262259444062049}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!198 &7601262257591742917
 ParticleSystem:
   m_ObjectHideFlags: 0

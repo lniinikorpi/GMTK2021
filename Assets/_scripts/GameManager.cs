@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     [HideInInspector]
-    public int currentLevel = -1;
+    public int currentLevel = 0;
     public bool isPaused = false;
     public List<GameObject> levels = new List<GameObject>();
     public GameObject currentLevelObject;
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         }
         isPaused = false;
         Time.timeScale = 1;
+        LoadLevel(currentLevel);
     }
 
     public void LoadLevel(int value)
