@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3881844147842188065}
   - component: {fileID: 3881844147842188064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3881844148209457217}
   - component: {fileID: 3881844148209457216}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3881844148499339450}
   - component: {fileID: 3881844148499339451}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

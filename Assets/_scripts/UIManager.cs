@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance = null;
     public List<GameObject> hearts = new List<GameObject>();
     public GameObject pausePanel;
+    public GameObject muteButton;
+    public GameObject unMuteButton;
 
     #region singelton
     private void Awake()
@@ -54,5 +56,20 @@ public class UIManager : MonoBehaviour
                 hearts[i].SetActive(false);
             }
         }
+    }
+    public void Mute()
+    {
+        AudioManager.instance.isMuted = true;
+        unMuteButton.SetActive(true);
+        muteButton.SetActive(false);
+        AudioManager.instance.Mute();
+    }
+
+    public void UnMute()
+    {
+        AudioManager.instance.isMuted = false;
+        unMuteButton.SetActive(false);
+        muteButton.SetActive(true);
+        AudioManager.instance.UnMute();
     }
 }

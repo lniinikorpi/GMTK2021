@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    public int currentLevel = 1;
+    [HideInInspector]
+    public int currentLevel = 0;
     public bool isPaused = false;
-
+    public List<GameObject> levels = new List<GameObject>();
+    public GameObject currentLevelObject;
     private void Awake()
     {
         if(instance == null)
@@ -20,10 +22,28 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void Start()
+    {
+        if (AudioManager.instance.isMuted)
+        {
+            UIManager.instance.Mute();
+            AudioManager.instance.Mute();
+        }
+        isPaused = false;
+        Time.timeScale = 1;
+        LoadLevel(currentLevel);
+    }
 
     public void LoadLevel(int value)
     {
-
+        if (currentLevelObject)
+        {
+            Destroy(currentLevelObject); 
+        }
+        GameObject newLevel = Instantiate(levels[value], Vector2.zero, Quaternion.identity);
+        currentLevelObject = newLevel;
+        GameObject.Find("Player").transform.position = Vector2.zero;
     }
 
     public void PauseGame()
