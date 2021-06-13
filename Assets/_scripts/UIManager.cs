@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
     public List<GameObject> hearts = new List<GameObject>();
+    public GameObject pausePanel;
 
     #region singelton
     private void Awake()
@@ -37,6 +38,7 @@ public class UIManager : MonoBehaviour
     void InitializeUI()
     {
         UpdateHealthBar(3);
+        pausePanel.SetActive(false);
     }
 
     public void UpdateHealthBar(int currentHealth)

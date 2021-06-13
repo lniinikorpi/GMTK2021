@@ -15,17 +15,30 @@ public class PlayerHit : MonoBehaviour, IDamageable
         _currentHealth = _player.maxHealth;
     }
 
+    void Update()
+    {
+        if(Time.time >= _canTakeDamage)
+        {
+            _damageable = true;
+        }
+    }
+
     public void Die()
     {
-
+        GetComponentInChildren<SpriteRenderer>().sprite = _player.dieSprite;
     }
 
     public void TakeDamage(int value)
     {
-        if (!_damageable)
+        if (value > 0)
+        {
+            if (!_damageable)
             return;
 
-        _canTakeDamage = Time.time + _player.dmgBoostTime;
+            _canTakeDamage = Time.time + _player.dmgBoostTime;
+            _damageable = false; 
+        }
+
         _currentHealth -= value;
         if(_currentHealth <= 0)
         {
@@ -44,6 +57,11 @@ public class PlayerHit : MonoBehaviour, IDamageable
         if(other.CompareTag("Enemy"))
         {
             TakeDamage(other.GetComponent<Enemy>().damage);
+        }
+
+        if(other.CompareTag("BombWall"))
+        {
+            TakeDamage(100);
         }
     }
 }

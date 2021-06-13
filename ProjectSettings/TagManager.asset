@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Goal
+  - BombWall
   layers:
   - Default
   - TransparentFX
